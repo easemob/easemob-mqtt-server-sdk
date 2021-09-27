@@ -27,8 +27,8 @@ public class OpenApiTest {
     public void applyTokenRequestTest() throws Exception {
         // 申请
         ApplyTokenRequest applyTokenRequest = new ApplyTokenRequest();
-        applyTokenRequest.setUsername("vimin1");
-        applyTokenRequest.setPassword("123456");
+        applyTokenRequest.setUsername("test");
+        applyTokenRequest.setPassword("123");
         ResponseOk<TokenInfo> responseOk = client.applyToken(applyTokenRequest);
         assumeTrue(responseOk.getCode() == 200);
         assumeTrue(StringUtils.isNotEmpty(responseOk.getBody().getUser().getUsername()));
