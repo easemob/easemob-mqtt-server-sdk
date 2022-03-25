@@ -42,7 +42,6 @@ public class Client {
      * @return
      */
     public ResponseOk<TokenInfo> applyToken(ApplyTokenRequest applyTokenRequest) throws Exception {
-        Validator.validateParameters(applyTokenRequest);
         String token = TokenUtils.acquireTokenFromCache(config, false);
         String url = buildApplyTokenUrl();
         Map<String, Object> body = ModelUtils.buildMap(new KeyValue[]{new KeyValue("username", applyTokenRequest.getUsername()), new KeyValue("password", applyTokenRequest.getPassword()), new KeyValue("appClientId", config.getAppClientId())});
